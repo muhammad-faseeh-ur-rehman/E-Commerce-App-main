@@ -87,7 +87,7 @@ const Navbar = () => {
                 }}
                 onClick={() => navigate("/")}
               >
-                 Online Shop
+                ROSA Online Shop
               </Typography>
             </Box>
 
