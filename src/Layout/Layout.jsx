@@ -4,16 +4,15 @@ import Navbar from "../components/NavBar";
 import { useThemeContext } from "../context/ThemeContext";
 
 export default function Layout() {
-    const { state } = useThemeContext();
-    const toggleMode = () => {
-        dispatch({ type: "ToggleMode" })
-    };
+  const { state } = useThemeContext();
+  const toggleMode = () => {
+    dispatch({ type: "ToggleMode" });
+  };
 
-    return (
-        <Box>
-            <Navbar mode={state.mode}
-                onToggleMode={toggleMode} />
-            <Outlet />
-        </Box>
-    )
+  return (
+    <Box>
+      <Navbar mode={state.mode} onToggleMode={toggleMode} />
+      <Outlet />
+    </Box>
+  );
 }
