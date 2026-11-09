@@ -5,9 +5,6 @@ import { Route, Routes } from 'react-router-dom'
 import Layout from './Layout/Layout';
 import Home from './pages/Home';
 import { LoadingState } from './components/common/LoadingState';
-
-// Route-level code splitting: these pages are only downloaded when the
-// user actually navigates to them, which keeps the initial bundle small.
 const CartPage = lazy(() => import('./pages/CartPage'));
 const ProductDetails = lazy(() => import('./pages/ProductDetails'));
 const WishlistPage = lazy(() => import('./pages/WishlistPage'));
