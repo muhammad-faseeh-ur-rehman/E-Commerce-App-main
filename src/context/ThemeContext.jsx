@@ -1,10 +1,7 @@
 import { createContext, useContext, useMemo, useReducer } from "react"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-
-
 const themeContext = createContext();
-
 const initialState = {
     mode: "dark",
     view: "grid"
@@ -19,7 +16,6 @@ const appReducer = (state, action) => {
             return state;
     }
 }
-
 export const ThemeContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(appReducer, initialState);
     const theme = useMemo(() =>
@@ -113,15 +109,12 @@ export const ThemeContextProvider = ({ children }) => {
             },
         }), [state.mode]
     )
-
     return <themeContext.Provider value={{ state, dispatch }}>
         <ThemeProvider theme={theme}>
             <CssBaseline />
             {children}
         </ThemeProvider>
     </themeContext.Provider>
-
-
 }
 export function useThemeContext() {
     return useContext(themeContext);
